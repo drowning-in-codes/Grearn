@@ -3,6 +3,8 @@ import time
 import requests
 import json
 
+from fastapi import HTTPException
+
 
 def greet(name, intensity):
     return "Hello" * intensity + name + "!"
@@ -52,21 +54,24 @@ def req_bot(message, history, temperature=0.7):
             "messages": [
                 {"role": "user", "content": f"${message}"}
             ],
-            "stream": True,
             "temperature": temperature,
         })
     )
-    print(response,temperature)
-    yield response.json()["content"]
+    res = response.json()["choices"][0]["message"]["content"].strip('"')
+    yield res
 
 
 with gr.Blocks() as demo:
     gr.Markdown("## Chat with Mistral")
     temperature = gr.components.Slider(label="Temperature", value=0.7, minimum=0.1, maximum=1.0)
-    chat_demo = gr.ChatInterface(req_bot, additional_inputs=[temperature],examples=["Hello", "Am I cool?", "Are tomatoes vegetables?"],
-    cache_examples=True).queue()
+    chat_demo = gr.ChatInterface(req_bot, additional_inputs=temperature, ).queue()
 
 # demo = gr.TabbedInterface([test, chat_demo], ["Hello World", "chat"])
 
 if __name__ == '__main__':
-    demo.launch()
+    try:
+        demo.launch()
+    except HTTPException:
+        pass
+    except AttributeError:
+        pass
