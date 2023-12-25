@@ -3,6 +3,8 @@
 ***REMOVED***
 ***REMOVED***
 
+***REMOVED***
+
 
 ***REMOVED***
 ***REMOVED***
@@ -52,21 +54,24 @@
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
-            "stream": True,
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
-    print(response,temperature)
-***REMOVED***ponse.json()["content"]
+***REMOVED***
+***REMOVED***
 
 
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
-    chat_demo = gr.ChatInterface(req_bot, additional_inputs=[temperature],examples=["Hello", "Am I cool?", "Are tomatoes vegetables?"],
-    cache_examples=True).queue()
-
 ***REMOVED***
 
 ***REMOVED***
-    demo.launch()
+
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
