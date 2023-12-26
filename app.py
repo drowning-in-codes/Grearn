@@ -1,19 +1,9 @@
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-
-***REMOVED***
-
-
-***REMOVED***
-***REMOVED***
-
+import subprocess
 
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
-***REMOVED***
+import yaml
 ***REMOVED***
 
 ***REMOVED***
@@ -25,33 +15,11 @@
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
+
 ***REMOVED***
 ***REMOVED***
 
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-
-
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-            "Authorization": "Bearer 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",
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
@@ -65,10 +33,48 @@
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
+***REMOVED***
+***REMOVED***
+
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+
+
+orkey = subprocess.getoutput("cat /run/secrets/openrouterkey")
 
 ***REMOVED***
 
 ***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+
+
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+
+***REMOVED***
+
+***REMOVED***
+    # with open('./configure.yaml', 'r', encoding='utf-8') as f:
+    #     result = yaml.load(f.read(), Loader=yaml.FullLoader)
+    # orkey = result["OpenRouterKey"]
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
