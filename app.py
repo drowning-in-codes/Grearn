@@ -43,7 +43,6 @@ with gr.Blocks(theme=gr.themes.Glass()) as test:
 #         yield "You typed: " + message[: i + 1]
 
 
-orkey = subprocess.getoutput("cat /run/secrets/openrouterkey")
 
 def req_bot(message, history, temperature=0.7):
 
@@ -72,9 +71,9 @@ with gr.Blocks() as demo:
 # demo = gr.TabbedInterface([test, chat_demo], ["Hello World", "chat"])
 
 if __name__ == '__main__':
-    # with open('./configure.yaml', 'r', encoding='utf-8') as f:
-    #     result = yaml.load(f.read(), Loader=yaml.FullLoader)
-    # orkey = result["OpenRouterKey"]
+    with open('./configure.yaml', 'r', encoding='utf-8') as f:
+        result = yaml.load(f.read(), Loader=yaml.FullLoader)
+    orkey = result["OpenRouterKey"]
     try:
         demo.launch()
     except HTTPException:
