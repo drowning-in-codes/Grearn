@@ -4,6 +4,7 @@ import gradio as gr
 import requests
 import json
 import yaml
+import os
 from fastapi import HTTPException
 
 def greet(name, intensity):
