@@ -1,10 +1,11 @@
+import subprocess
+
 import gradio as gr
-import time
 import requests
 import json
-
+import yaml
+import os
 from fastapi import HTTPException
-
 
 def greet(name, intensity):
     return "Hello" * intensity + name + "!"
@@ -44,10 +45,11 @@ with gr.Blocks(theme=gr.themes.Glass()) as test:
 
 
 def req_bot(message, history, temperature=0.7):
+
     response = requests.post(
         url="https://openrouter.ai/api/v1/chat/completions",
         headers={
-            "Authorization": "Bearer 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",
+            "Authorization": f"Bearer {orkey}",
             "Content-Type": "application/json"},
         data=json.dumps({
             "model": "mistralai/mistral-7b-instruct",  # Optional
@@ -69,6 +71,10 @@ with gr.Blocks() as demo:
 # demo = gr.TabbedInterface([test, chat_demo], ["Hello World", "chat"])
 
 if __name__ == '__main__':
+    # with open('./configure.yaml', 'r', encoding='utf-8') as f:
+    #     result = yaml.load(f.read(), Loader=yaml.FullLoader)
+    # orkey = result["OpenRouterKey"]
+    orkey = os.environ.get("openrouterkey")
     try:
         demo.launch()
     except HTTPException:
