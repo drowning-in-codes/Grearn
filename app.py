@@ -43,7 +43,6 @@ import yaml
 ***REMOVED***
 
 
-orkey = subprocess.getoutput("cat /run/secrets/openrouterkey")
 
 ***REMOVED***
 
@@ -72,9 +71,9 @@ orkey = subprocess.getoutput("cat /run/secrets/openrouterkey")
 ***REMOVED***
 
 ***REMOVED***
-    # with open('./configure.yaml', 'r', encoding='utf-8') as f:
-    #     result = yaml.load(f.read(), Loader=yaml.FullLoader)
-    # orkey = result["OpenRouterKey"]
+***REMOVED***
+***REMOVED***
+***REMOVED***
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
